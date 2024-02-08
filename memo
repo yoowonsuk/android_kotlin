@@ -1,0 +1,84 @@
+https://developer.android.com/studio/install#linux
+
+run or shift+f10
+
+So if you press control and command and then click on the method name you will jump on the file here
+
+https://kotlinlang.org/docs/basic-types.html
+
+ctrl shift f10 : Run
+
+run kotlin code online : play.kotlinlang.org (playground)
+
+val: constant, var:mutable
+
+var myChar = '\u00AE' // unicode
+
+for (c in str) {
+    println(c)
+}
+str.uppercase()
+"""
+""" : multiline strings
+.trimMargin()
+
+if(true) {
+}else{
+}
+var enteredValue = readln().toInt()
+
+if(age in 18<=..<=39)
+startValue..endValue
+
+when (randomNumber) {
+1 -> {
+}
+}
+가위바위보 플젝, summary
+
+String.toInt()
+
+basics 플젝
+
+data class (in class or separate file)
+
+trimindent()
+
+!!summary, resource!!
+bank 플젝
+
+xml -> jetpack compose
+flutter도 좋다 (by google)
+
+setting -> dark theme
+아래에서 위옆으로
+Greeting 추가만 하면 또 안 생김
+
+https://velog.io/@dong-hyeok/Android-kotlin-Service
+
+remember and mutuable state
+https://heegs.tistory.com/122
+
+jsonformatter.org [ { } ] # list
+themealdb.com
+Gradle Scripts -> build.gradle.kts
+    //Compose ViewModel
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2")
+    
+    // Network calls
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    
+    //Json to Kotlin object mapping
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    //Image loading
+    implementation("io.coil-kt:coil-compose:2.4.0")
+
+suspend function characteristics
+- non-blocking
+- coroutine context
+- flexibility
+
+<uses-permission android:name="android.permission.INTERNET" />
+
+https://developer.android.com/jetpack/compose/navigation#kts
