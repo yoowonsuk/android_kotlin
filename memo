@@ -82,3 +82,20 @@ suspend function characteristics
 <uses-permission android:name="android.permission.INTERNET" />
 
 https://developer.android.com/jetpack/compose/navigation#kts
+implementation("androidx.navigation:navigation-compose:2.7.4")
+
+sealed class
+object <-> class
+
+plugins {
+    id("com.android.application")
+    id("org.jetbrains.kotlin.android")
+    id("kotlin-parcelize")
+}
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+? ?. let !!
+https://tourspace.tistory.com/114

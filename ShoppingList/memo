@@ -1,0 +1,21 @@
+add map or geometry after another lecture 
+
+    implementation ("com.google.maps.android:maps-compose:2.15.0")
+    implementation ("com.google.android.gms:play-services-maps:18.1.0")
+    
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2")
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("androidx.navigation:navigation-compose:2.7.4")
+
+developers.google.com/maps/documentation/android-sdk/get-api-key
+APIs & Services => Enabled APIs & Services => Maps SDK for Android => ENABLE click
+e.g. AIzaSyCnfwyKH4V8CE5XR38GGg_uZysFyHIXeZU
+Protect => Android apps, package name, SHA-1 certificate fingerpinrt :Gradle->Execute gradle task->"gradle signingreport" => restrict key
+find it in "Keys & Credentials"
+
+AndroidManifest.xml
+<meta-dtata 
+    android:name="com.google.android.geo.API_KEY
+    android:value="AIzaSyCnfwyKH4V8CE5XR38GGg_uZysFyHIXeZU"
+/>

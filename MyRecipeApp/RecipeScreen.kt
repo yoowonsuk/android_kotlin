@@ -2,6 +2,7 @@ package eu.tutorials.myrecipeapp
 
 import android.transition.CircularPropagation
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.aspectRatio
@@ -25,9 +26,11 @@ import coil.compose.rememberAsyncImagePainter
 
 
 @Composable
-fun RecipeScreen(modifier: Modifier = Modifier) {
-    var recipeViewModel:MainViewModel = viewModel()
-    val viewstate by recipeViewModel.categoriesState
+fun RecipeScreen(modifier: Modifier = Modifier,
+                 viewstate:MainViewModel.RecipeState,
+                 navigateToDetail: (Category) -> Unit) {
+    //var recipeViewModel:MainViewModel = viewModel()
+    //val viewstate by recipeViewModel.categoriesState
     Box(modifier = Modifier.fillMaxSize()) {
         when{
             viewstate.loading ->(
@@ -38,28 +41,31 @@ fun RecipeScreen(modifier: Modifier = Modifier) {
             }
             else -> {
                     //Display Categories
-                CategoryScreen(categories=viewstate.list)
+                CategoryScreen(categories=viewstate.list, navigateToDetail)
             }
         }
     }
 }
 
 @Composable
-fun CategoryScreen(categories: List<Category>) {
+fun CategoryScreen(categories: List<Category>,
+                   navigateToDetail: (Category) -> Unit) {
     LazyVerticalGrid(GridCells.Fixed(2), modifier=Modifier.fillMaxSize()) {
         items(categories) {
             category ->
-            CategoryItem(category = category)
+            CategoryItem(category = category, navigateToDetail)
         }
     }
 }
 
 // How each Items looks like
 @Composable
-fun CategoryItem(category:Category) {
+fun CategoryItem(category:Category,
+                 navigateToDetail: (Category) -> Unit) {
     Column(modifier = Modifier
         .padding(8.dp)
-        .fillMaxSize(),
+        .fillMaxSize()
+        .clickable { navigateToDetail(category)},
         horizontalAlignment = Alignment.CenterHorizontally) {
         Image(
             painter = rememberAsyncImagePainter(category.strCategoryThumb),
@@ -67,6 +73,7 @@ fun CategoryItem(category:Category) {
             modifier = Modifier.fillMaxSize().aspectRatio(1f)
         )
 
+        //Text("BLABLA")
         Text(
             text = category.strCategory,
             color = Color.Black,
